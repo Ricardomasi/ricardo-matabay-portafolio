@@ -1,8 +1,7 @@
-//components/particlesbackground.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Particles from '@tsparticles/react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { ISourceOptions } from '@tsparticles/engine';
 
@@ -10,12 +9,11 @@ export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    const initParticles = async () => {
-      const { tsParticles } = await import('@tsparticles/engine');
-      await loadSlim(tsParticles);
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
       setInit(true);
-    };
-    initParticles();
+    });
   }, []);
 
   const particlesOptions: ISourceOptions = {
@@ -27,7 +25,7 @@ export default function ParticlesBackground() {
         value: 45,
         density: {
           enable: true,
-          value_area: 800,
+          area: 800,
         },
       },
       color: { value: '#00bcd4' },
