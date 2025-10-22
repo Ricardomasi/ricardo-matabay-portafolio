@@ -24,7 +24,13 @@ export default function ParticlesBackground() {
     particles: {
       number: {
         value: 45,
-        density: { enable: true, value_area: 800 }, 
+        density: {
+          enable: true,
+          area: {
+            width: 800,
+            height: 800,
+          },
+        },
       },
       color: { value: '#00bcd4' },
       shape: { type: 'circle' },
@@ -40,8 +46,8 @@ export default function ParticlesBackground() {
       move: {
         enable: true,
         speed: 1,
-        direction: 'none' as const,
-        outModes: { default: 'out' as const },
+        direction: 'none',
+        outModes: { default: 'out' },
       },
     },
     interactivity: {
