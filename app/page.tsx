@@ -282,7 +282,7 @@ export default function HomePage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-200 mb-2">Mensaje *</label>
                   <textarea
-                    rows="5"
+                    rows={5}
                     name="message"
                     required
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-[#2a2a3e] text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
