@@ -244,7 +244,7 @@ export default function HomePage() {
                 method="POST"
                 className="space-y-6"
                 onSubmit={(e) => {
-                  const submitButton = e.currentTarget.querySelector('button[type="submit"]');
+                  const submitButton = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
                   if (submitButton) {
                     submitButton.disabled = true;
                     submitButton.textContent = 'Enviando...';
