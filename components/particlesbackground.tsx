@@ -31,7 +31,7 @@ export default function ParticlesBackground() {
       move: {
         enable: true,
         speed: 1.2,
-        outModes: { default: 'out' },
+        outModes: 'out',
       },
     },
     interactivity: {
