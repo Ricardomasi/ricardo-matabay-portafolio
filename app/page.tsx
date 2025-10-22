@@ -95,7 +95,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">KPI's Productividad Laboral</h3>
+                <h3 className="text-xl font-bold text-white mb-3">KPI Productividad Laboral</h3>
                 <p className="text-gray-300 mb-4">Dashboard interactivo para visualización de métricas de los empleados de una institución pública.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-blue-900/50 text-blue-200 text-sm rounded-full">Python</span>
