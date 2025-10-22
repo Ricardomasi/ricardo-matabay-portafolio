@@ -1,4 +1,3 @@
-// components/particlesbackground.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -9,34 +8,48 @@ export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    loadSlim(window.tsParticles).then(() => setInit(true));
+    const initParticles = async () => {
+      const { tsParticles } = await import('@tsparticles/engine');
+      await loadSlim(tsParticles);
+      setInit(true);
+    };
+    initParticles();
   }, []);
 
   const particlesOptions = {
-    fpsLimit: 20,
-    fullScreen: { enable: true },
+    fpsLimit: 60,
+    fullScreen: { enable: true, zIndex: 0 },
     particles: {
-      number: { value: 40, density: { enable: true, value_area: 600 } },
-      color: { value: '#89fc00' },
+      number: { value: 50, density: { enable: true, area: 800 } },
+      color: { value: '#00bcd4' },
       shape: { type: 'circle' },
-      opacity: { value: 0.9, random: true },
-      size: { value: { min: 2, max: 6 } },
+      opacity: { value: 0.6, random: false },
+      size: { value: { min: 1, max: 4 }, random: true },
       links: {
         enable: true,
-        distance: 120,
-        color: '#89fc00',
-        opacity: 0.8,
-        width: 1.5,
+        distance: 130,
+        color: '#00bcd4',
+        opacity: 0.4,
+        width: 1,
       },
       move: {
         enable: true,
-        speed: 1.2,
-        outModes: 'out',
+        speed: 1,
+        direction: 'none',
+        random: false,
+        straight: false,
+        outModes: { default: 'out' as const }, // ✅ CORRECCIÓN PRINCIPAL
       },
     },
     interactivity: {
-      events: { onHover: { enable: true, mode: 'grab' }, onClick: { enable: false } },
-      modes: { grab: { distance: 150, line_linked: { opacity: 0.7 } } },
+      events: {
+        onHover: { enable: true, mode: 'grab' },
+        onClick: { enable: false },
+        resize: true,
+      },
+      modes: {
+        grab: { distance: 140, links: { opacity: 0.6 } },
+      },
     },
     detectRetina: true,
   };
