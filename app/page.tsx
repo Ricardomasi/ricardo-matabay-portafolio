@@ -313,7 +313,7 @@ export default function HomePage() {
             width="300"
             height="80"
             frameBorder="0"
-            allowFullScreen=""
+            allowFullScreen={true}
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
             className="rounded mx-auto"
