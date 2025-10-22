@@ -89,7 +89,7 @@ export default function HomePage() {
               <div className="relative h-48">
                 <Image
                   src="/project1.jpg" // Reemplaza con la ruta de tu imagen en /public
-                  alt="KPI's Productividad Laboral"
+                  alt="KPI Productividad Laboral"
                   fill
                   className="object-cover rounded-t-xl group-hover:opacity-90 transition-opacity"
                 />
