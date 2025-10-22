@@ -32,8 +32,6 @@ export default function ParticlesBackground() {
         enable: true,
         speed: 1.2,
         direction: 'none',
-        //ELIMINADO: random: false
-		//ELIMINADO: straight: false
         outModes: { default: 'out' },
       },
     },
