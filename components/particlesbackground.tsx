@@ -1,3 +1,4 @@
+//components/particlesbackground.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -26,10 +27,7 @@ export default function ParticlesBackground() {
         value: 45,
         density: {
           enable: true,
-          area: {
-            width: 800,
-            height: 800,
-          },
+          value_area: 800,
         },
       },
       color: { value: '#00bcd4' },
@@ -54,7 +52,7 @@ export default function ParticlesBackground() {
       events: {
         onHover: { enable: true, mode: 'grab' },
         onClick: { enable: false },
-        resize: { enable: true },
+        resize: true,
       },
       modes: {
         grab: { distance: 140, links: { opacity: 0.6 } },
