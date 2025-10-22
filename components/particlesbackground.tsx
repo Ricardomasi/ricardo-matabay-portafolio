@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import type { ISourceOptions } from '@tsparticles/engine';
 
 export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
@@ -16,14 +17,18 @@ export default function ParticlesBackground() {
     initParticles();
   }, []);
 
-  const particlesOptions = {
+  const particlesOptions: ISourceOptions = {
     fpsLimit: 60,
     fullScreen: { enable: true, zIndex: 0 },
+    detectRetina: true,
     particles: {
-      number: { value: 50, density: { enable: true, area: 800 } },
+      number: {
+        value: 45,
+        density: { enable: true, area: 800 },
+      },
       color: { value: '#00bcd4' },
       shape: { type: 'circle' },
-      opacity: { value: 0.6 },
+      opacity: { value: 0.5 },
       size: { value: { min: 1, max: 4 } },
       links: {
         enable: true,
@@ -35,9 +40,7 @@ export default function ParticlesBackground() {
       move: {
         enable: true,
         speed: 1,
-        direction: 'none',
-        random: false,
-        straight: false,
+        direction: 'none' as const,
         outModes: { default: 'out' as const },
       },
     },
@@ -45,16 +48,12 @@ export default function ParticlesBackground() {
       events: {
         onHover: { enable: true, mode: 'grab' },
         onClick: { enable: false },
-        resize: { enable: true }, 
+        resize: { enable: true },
       },
       modes: {
-        grab: {
-          distance: 140,
-          links: { opacity: 0.6 },
-        },
+        grab: { distance: 140, links: { opacity: 0.6 } },
       },
     },
-    detectRetina: true,
   };
 
   return (
