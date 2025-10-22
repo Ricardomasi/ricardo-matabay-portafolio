@@ -23,8 +23,8 @@ export default function ParticlesBackground() {
       number: { value: 50, density: { enable: true, area: 800 } },
       color: { value: '#00bcd4' },
       shape: { type: 'circle' },
-      opacity: { value: 0.6, random: false },
-      size: { value: { min: 1, max: 4 }, random: true },
+      opacity: { value: 0.6 },
+      size: { value: { min: 1, max: 4 } },
       links: {
         enable: true,
         distance: 130,
@@ -38,17 +38,20 @@ export default function ParticlesBackground() {
         direction: 'none',
         random: false,
         straight: false,
-        outModes: { default: 'out' as const }, // ✅ CORRECCIÓN PRINCIPAL
+        outModes: { default: 'out' as const },
       },
     },
     interactivity: {
       events: {
         onHover: { enable: true, mode: 'grab' },
         onClick: { enable: false },
-        resize: true,
+        resize: { enable: true }, 
       },
       modes: {
-        grab: { distance: 140, links: { opacity: 0.6 } },
+        grab: {
+          distance: 140,
+          links: { opacity: 0.6 },
+        },
       },
     },
     detectRetina: true,
