@@ -49,7 +49,6 @@ export default function ParticlesBackground() {
       events: {
         onHover: { enable: true, mode: 'grab' },
         onClick: { enable: false },
-        resize: true,
       },
       modes: {
         grab: { distance: 140, links: { opacity: 0.6 } },
