@@ -1,7 +1,7 @@
 // app/page.tsx
-
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import { FaLinkedin, FaGithub, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -9,76 +9,85 @@ import { motion } from 'framer-motion';
 export default function HomePage() {
   return (
     <>
-    {/* Seccion Inicio*/}
-    <section id="inicio" className="min-h-screen flex flex-col items-center justify-center text-center p-6">
-      <div className="mb-8">
-        <Image
-          src="/perfil.png"
-          alt="Ricardo Matabay"
-          width={200}
-          height={200}
-          className="rounded-full shadow-lg border-2 border-[#f5ebe0]"
-        />
-      </div>
-      <h1 className="text-4xl font-bold text-white mb-4">Hola, soy Ricardo Matabay</h1>
-      <p className="text-lg text-[#73fbd3] max-w-md">
-        Economista y en camino a ser ingeniero en ciencias de datos e IA. 
-        Bienvenido a mi portafolio, donde comparto mi viaje en análisis de 
-        datos.
-      </p>
-      <div className="flex space-x-6 mb-6">
-        <a href="https://www.linkedin.com/in/ricardo-matabay/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
-          <FaLinkedin size={24} />
-        </a>
-        <a href="https://github.com/Ricardomasi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors duration-300">
-          <FaGithub size={24} />
-        </a>
-        <a href="https://www.youtube.com/@ricciduck" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-400 transition-colors duration-300">
-          <FaYoutube size={24} />
-        </a>
-      </div>
-    </section>
-
-    {/* Seccion Sobre mi*/}
-    <section id="sobre-mi" className="min-h-screen flex flex-col 
-    items-center justify-center text-center p-6 bg-[#1a1a2e] 
-    bg-opacity-90">
-      <div className="flex flex-col md:flex-row w-full max-w-5xl space-y-6 md:space-y-0 md:space-x-12">
-        <div className="flex-1 text-center md:text-left">
-          <h2 className="text-3xl font-bold text-white mb-6">Sobre mí</h2>
-          <p className="text-lg text-[#ffea00] max-w-md text-justify">
-            En los últimos 10 años he trabajado como asistente en áreas contables, 
-            administrativas, finacieras y de atención al cliente. En todas ellas he 
-            realizado actividades relacionadas a ETL y el uso de herramientas 
-            como son <strong> Excel, Power BI, R, Python </strong>. Me gusta el 
-            análisis de datos y la inteligencia artificial, por lo que actualmente,
-            estoy reforzando y desarrollando nuevas habilidades en este vasto campo. 
-            Mi objetivo es combinar mi experiencia como economista y la tecnología 
-            para transformar información en conocimiento útil.
+      {/* Sección Inicio */}
+      <section id="inicio" className="min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <div className="mb-8">
+          <Image
+            src="/perfil.png"
+            alt="Ricardo Matabay"
+            width={200}
+            height={200}
+            className="rounded-full shadow-lg border-2 border-[#f5ebe0]"
+          />
+        </div>
+        <h1 className="text-4xl font-bold text-white mb-4">Hola, soy Ricardo Matabay</h1>
+        <p className="text-lg text-[#73fbd3] max-w-md">
+          Economista y en camino a ser ingeniero en ciencias de datos e IA.
+          Bienvenido a mi portafolio, donde comparto mi viaje en análisis de
+          datos.
         </p>
-      </div>
-        <div className="flex-1 text-center md:text-left">
-          <h2 className="text-3xl font-bold text-teal-50 mb-4">Educación</h2>
-          <p className="text-lg text-[#caf0f8] max-w-lg"><strong>Universidad Central del Ecuador</strong> - Economista (RS-RN1005—2017)</p>
-          <p className="text-lg text-[#caf0f8] max-w-lg">Oracle Next Education - Especialización en Ciencia de Datos (2025 - 2026)</p>
-
-          <a
-            href="/CV_RicardoMatabay_2025.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white font-semibold 
-            py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-            Descargar CV
+        <div className="flex space-x-6 mb-6">
+          <a href="https://www.linkedin.com/in/ricardo-matabay/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
+            <FaLinkedin size={24} />
+          </a>
+          <a href="https://github.com/Ricardomasi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors duration-300">
+            <FaGithub size={24} />
+          </a>
+          <a href="https://www.youtube.com/@ricciduck" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-400 transition-colors duration-300">
+            <FaYoutube size={24} />
           </a>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Sección Sobre mí */}
+      <section
+        id="sobre-mi"
+        className="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-[#1a1a2e] bg-opacity-90"
+      >
+        <div className="flex flex-col md:flex-row w-full max-w-5xl space-y-6 md:space-y-0 md:space-x-12">
+          {/* Columna izquierda */}
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-white mb-6">Sobre mí</h2>
+            <p className="text-lg text-[#ffea00] max-w-md text-justify">
+              En los últimos 10 años he trabajado como asistente en áreas contables,
+              administrativas, financieras y de atención al cliente. En todas ellas he
+              realizado actividades relacionadas a ETL y el uso de herramientas
+              como son <strong>Excel, Power BI, R, Python</strong>. Me gusta el
+              análisis de datos y la inteligencia artificial, por lo que actualmente,
+              estoy reforzando y desarrollando nuevas habilidades en este vasto campo.
+              Mi objetivo es combinar mi experiencia como economista y la tecnología
+              para transformar información en conocimiento útil.
+            </p>
+          </div>
+
+          {/* Columna derecha */}
+          <div className="flex-1 text-center md:text-left relative">
+            <h2 className="text-3xl font-bold text-teal-50 mb-4">Educación</h2>
+            <p className="text-lg text-[#caf0f8] max-w-lg">
+              <strong>Universidad Central del Ecuador</strong> - Economista (RS-RN1005—2017)
+            </p>
+            <p className="text-lg text-[#caf0f8] max-w-lg">
+              Oracle Next Education - Especialización en Ciencia de Datos (2025 - 2026)
+            </p>
+
+            <a
+              href="/CV_RicardoMatabay_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            >
+              Descargar CV
+            </a>
+          </div> {/*Cierre correcto de la columna derecha */}
+        </div> {/*Cierre correcto del contenedor de columnas */}
+      </section>
 
       {/* Sección Proyectos */}
       <section id="proyectos" className="min-h-screen py-20 px-4 flex items-center bg-[#1a1a2e] bg-opacity-90">
         <div className="max-w-6xl mx-auto w-full">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">Proyectos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {/* Proyecto 1 */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -88,7 +97,7 @@ export default function HomePage() {
             >
               <div className="relative h-48">
                 <Image
-                  src="/project1.jpg" // Reemplaza con la ruta de tu imagen en /public
+                  src="/project1.jpg"
                   alt="KPI Productividad Laboral"
                   fill
                   className="object-cover rounded-t-xl group-hover:opacity-90 transition-opacity"
@@ -96,13 +105,15 @@ export default function HomePage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-3">KPI Productividad Laboral</h3>
-                <p className="text-gray-300 mb-4">Dashboard interactivo para visualización de métricas de los empleados de una institución pública.</p>
+                <p className="text-gray-300 mb-4">
+                  Dashboard interactivo para visualización de métricas de los empleados de una institución pública.
+                </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-blue-900/50 text-blue-200 text-sm rounded-full">Python</span>
                   <span className="px-3 py-1 bg-green-900/50 text-green-200 text-sm rounded-full">Tableau</span>
                 </div>
                 <a
-                  href="https://github.com/tu-repositorio" // Reemplaza con el enlace real
+                  href="https://github.com/tu-repositorio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
@@ -121,7 +132,7 @@ export default function HomePage() {
             >
               <div className="relative h-48">
                 <Image
-                  src="/project2.jpg" // Reemplaza con la ruta de tu imagen en /public
+                  src="/project2.jpg"
                   alt="Predictor de Mercado"
                   fill
                   className="object-cover rounded-t-xl group-hover:opacity-90 transition-opacity"
@@ -129,13 +140,15 @@ export default function HomePage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-3">Predictor de Mercado</h3>
-                <p className="text-gray-300 mb-4">Modelo de machine learning para predecir tendencias de mercado con 92% de precisión.</p>
+                <p className="text-gray-300 mb-4">
+                  Modelo de machine learning para predecir tendencias de mercado con 92% de precisión.
+                </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-purple-900/50 text-purple-200 text-sm rounded-full">R</span>
                   <span className="px-3 py-1 bg-yellow-900/50 text-yellow-200 text-sm rounded-full">Python</span>
                 </div>
                 <a
-                  href="https://github.com/tu-repositorio" // Reemplaza con el enlace real
+                  href="https://github.com/tu-repositorio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
@@ -154,7 +167,7 @@ export default function HomePage() {
             >
               <div className="relative h-48">
                 <Image
-                  src="/project3.jpg" // Reemplaza con la ruta de tu imagen en /public
+                  src="/project3.jpg"
                   alt="Optimización de Procesos"
                   fill
                   className="object-cover rounded-t-xl group-hover:opacity-90 transition-opacity"
@@ -162,13 +175,15 @@ export default function HomePage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-3">Optimización de Procesos</h3>
-                <p className="text-gray-300 mb-4">Sistema para mejorar eficiencia en procesos administrativos reduciendo tiempos en 40%.</p>
+                <p className="text-gray-300 mb-4">
+                  Sistema para mejorar eficiencia en procesos administrativos reduciendo tiempos en 40%.
+                </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-red-900/50 text-red-200 text-sm rounded-full">MySQL</span>
                   <span className="px-3 py-1 bg-blue-900/50 text-blue-200 text-sm rounded-full">Docker</span>
                 </div>
                 <a
-                  href="https://github.com/tu-repositorio" // Reemplaza con el enlace real
+                  href="https://github.com/tu-repositorio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
@@ -177,11 +192,12 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
 
-    {/* Sección Contacto */}
+      {/* Sección Contacto */}
       <section id="contacto" className="min-h-screen py-20 px-4 flex items-center bg-[#1a1a2e] bg-opacity-90">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -343,4 +359,3 @@ export default function HomePage() {
     </>
   );
 }
-// Realizado en Next.js
